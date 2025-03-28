@@ -15,7 +15,7 @@ Technology Stack:
 Backend: Node.js, Express.js
 Database: MongoDB (Mongoose for schema management)
 Authentication: JWT, bcrypt for password hashing
-Frontend (if applicable): React.js or basic HTML/CSS
+Frontend (if applicable): React.js
 API Testing: Postman
 Potential Challenges:
 
