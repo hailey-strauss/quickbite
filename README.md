@@ -1,4 +1,4 @@
-Project Title: QuickBite - Food Delivery App
+# Project Title: QuickBite - Food Delivery App
 
 Project Overview:
 QuickBite is a web-based food delivery platform that connects users with local restaurants. Users can browse menus, place orders, and track deliveries in real time. Restaurants can manage their menus, process orders, and update order statuses. The goal is to create a simple and user-friendly experience for both customers and restaurant owners.
