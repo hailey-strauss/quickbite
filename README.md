@@ -1,24 +1,53 @@
-# Project Title: QuickBite - Food Delivery App
+# QuickBite - Food Delivery App
 
-Project Overview:
-QuickBite is a web-based food delivery platform that connects users with local restaurants. Users can browse menus, place orders, and track deliveries in real time. Restaurants can manage their menus, process orders, and update order statuses. The goal is to create a simple and user-friendly experience for both customers and restaurant owners.
+### Project Purpose & Overview
 
-Core Features & Functionality:
+QuickBite is a food delivery application designed to make ordering food from local restaurants fast, easy, and efficient. The app allows users to browse nearby restaurants, view menus, place orders, and track deliveries in real-time. With features such as user authentication, order history, and restaurant recommendations, QuickBite aims to streamline the food ordering process for both customers and restaurant owners. This project will focus on building a robust API using Express.js, MongoDB, and JWT authentication.
 
-User Authentication – Secure login and registration (JWT-based).
-Restaurant & Menu Management – Restaurants can add, edit, and delete menu items.
-Order Processing – Users can place, view, and cancel orders.
-Real-time Order Tracking – Users can track the status of their orders.
-Payment Integration – Support for online payments (Stripe/PayPal).
-Technology Stack:
+### Current Progress:
 
-Backend: Node.js, Express.js
-Database: MongoDB (Mongoose for schema management)
-Authentication: JWT, bcrypt for password hashing
-Frontend (if applicable): React.js
-API Testing: Postman
-Potential Challenges:
+Backend API:
 
-Implementing secure authentication and authorization.
-Managing real-time order updates efficiently.
-Ensuring smooth API communication between users and restaurants.
+- Set up project structure with Express.js and MongoDB.
+
+- Implemented basic models for Users, Restaurants, and Orders.
+
+- Created essential CRUD operations (GET, POST, DELETE) for Users, Restaurants, and Orders.
+
+- Implemented user authentication with JWT.
+
+Routes:
+
+- Set up routes for users (/api/users), restaurants (/api/restaurants), and orders (/api/orders).
+
+Middleware:
+
+- Created authentication middleware to secure routes requiring logged-in users.
+
+Database:
+
+- MongoDB collections are created for Users, Restaurants, and Orders.
+
+### Next Steps for Project Completion:
+
+Enhance Features:
+
+- Implement PUT/PATCH routes for updating user profiles and orders.
+
+- Integrate payment gateway for real-world transactions.
+
+- Develop functionality for users to add restaurants to their favorites list.
+
+Testing & Debugging:
+
+- Perform API testing using Postman or Insomnia.
+
+Frontend Development:
+
+- Create a user interface for the app using React.js.
+
+- Integrate frontend with the backend API.
+
+Deployment:
+
+- Ensure MongoDB is connected using cloud services like MongoDB Atlas.
