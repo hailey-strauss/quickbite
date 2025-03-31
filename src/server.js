@@ -1,8 +1,17 @@
-import app from "./app.js";
-import mongoose from "mongoose";
+import express from "express";
+import userRoutes from "./routes/userRoutes.js"; // Import your user routes
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 
 dotenv.config();
+
+const app = express();
+
+// Middleware to parse JSON request bodies
+app.use(express.json());
+
+// Use the user routes under the "/users" endpoint
+app.use("/users", userRoutes); // This is important
 
 const PORT = process.env.PORT || 3000;
 
