@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "name": "nodemon",
+            "program": "${workspaceFolder}/app.js",
+            "request": "launch",
+            "restart": true,
+            "runtimeExecutable": "nodemon",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug Quickbite",
+        "skipFiles": ["<node_internals>/**"],
+        "program": "${workspaceFolder}/src/server.js"
+      }
+    ]
+  }
