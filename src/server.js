@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import app from "./app.js";
-import { createServer } from "http";
 
 dotenv.config();
 
@@ -14,6 +13,5 @@ export default async function handler(req, res) {
     isConnected = true;
   }
 
-  const server = createServer(app);
-  server.emit("request", req, res);
+  return app(req, res); // Just forward the request to Express
 }
