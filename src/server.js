@@ -1,24 +1,18 @@
-import express from "express";
-import userRoutes from "./routes/userRoutes.js"; // Import your user routes
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import app from "./app.js";
+import app from "./app.js"; // Assuming app.js is in the same directory
 
 dotenv.config();
 
-// Use the user routes under the "/users" endpoint
-app.use("/users", userRoutes); // This is important
-
-const PORT = process.env.PORT || 3000;
-
+// Connect to MongoDB (one-time connection, not starting the server here!)
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected");
-    app.listen(PORT, () =>
-      console.log(`Server running on http://localhost:${PORT}`)
-    );
   })
-  .catch((err) => console.error(err));
-export default app; // Export app for Vercel to use
-//server.js
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+// No PORT listening here
+// Because Vercel automatically handles starting the app when it's exported
+
+export default app;
