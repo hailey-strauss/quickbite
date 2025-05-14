@@ -20,3 +20,4 @@ mongoose
     );
   })
   .catch((err) => console.error(err));
+export default app; // Export app for Vercel to use
