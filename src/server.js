@@ -1,13 +1,19 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import app from "./app.js"; // Assuming app.js is in the same directory
+import app from "../src/app.js"; // Adjust path as needed
+import { createServer } from "http";
 
 dotenv.config();
 
-// Connect to MongoDB (one-time connection, not starting the server here!)
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
+let isConnected = false;
+
+export default async function handler(req, res) {
+  if (!isConnected) {
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("MongoDB connected");
-  })
-  .catch((err) => console.error("MongoDB connection error:", err));
+    isConnected = true;
+  }
+
+  const server = createServer(app);
+  server.emit("request", req, res);
+}
