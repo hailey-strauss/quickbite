@@ -2,7 +2,7 @@
   "name": "quickbite",
   "version": "1.0.0",
   "description": "Project Overview: QuickBite is a web-based food delivery platform that connects users with local restaurants. Users can browse menus, place orders, and track deliveries in real time. Restaurants can manage their menus, process orders, and update order statuses. The goal is to create a simple and user-friendly experience for both customers and restaurant owners.",
-  "main": "server.js",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
