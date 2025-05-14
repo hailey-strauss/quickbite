@@ -17,5 +17,8 @@ app.use(morgan("dev"));
 app.use("/api/users", userRoutes);
 app.use("/api/restaurants", restaurantRoutes);
 app.use("/api/orders", orderRoutes);
+app.get("/", (req, res) => {
+  res.send("🎉 Express is working on Vercel!");
+});
 
 export default app;
