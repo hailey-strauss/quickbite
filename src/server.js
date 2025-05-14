@@ -11,14 +11,17 @@ export default async function handler(req, res) {
     console.log("Incoming request:", req.url);
 
     if (!isConnected) {
-      await mongoose.connect(process.env.MONGO_URI);
+      await mongoose.connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
       console.log(" MongoDB connected");
       isConnected = true;
     }
 
-    return app(req, res); // Forward the request to your Express app
+    return app(req, res); // Forward to Express app
   } catch (err) {
-    console.error(" Handler error:", err);
+    console.error(" Server error:", err);
     res.statusCode = 500;
     res.end("Internal Server Error");
   }
