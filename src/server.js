@@ -1,10 +1,12 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import app from "../src/app.js"; // Adjust path as needed
+import app from "./app.js"; // Adjust path if needed
 import { createServer } from "http";
+import { parse } from "url";
 
 dotenv.config();
 
+// Ensure MongoDB is only connected once
 let isConnected = false;
 
 export default async function handler(req, res) {
@@ -15,5 +17,7 @@ export default async function handler(req, res) {
   }
 
   const server = createServer(app);
+
+  // Let Express handle the request
   server.emit("request", req, res);
 }
