@@ -2,7 +2,7 @@ import express from "express";
 import userRoutes from "./routes/userRoutes.js"; // Import your user routes
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import app from "./src/app.js";
+import app from "./app.js";
 
 dotenv.config();
 
