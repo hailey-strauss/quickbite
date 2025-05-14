@@ -2,13 +2,9 @@ import express from "express";
 import userRoutes from "./routes/userRoutes.js"; // Import your user routes
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import app from "./app.js";
 
 dotenv.config();
-
-const app = express();
-
-// Middleware to parse JSON request bodies
-app.use(express.json());
 
 // Use the user routes under the "/users" endpoint
 app.use("/users", userRoutes); // This is important
