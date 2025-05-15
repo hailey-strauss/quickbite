@@ -20,5 +20,6 @@ app.use("/api/orders", orderRoutes);
 app.get("/", (req, res) => {
   res.send("🎉 Express is working on Vercel!");
 });
+app.get("/favicon.ico", (req, res) => res.status(204).end());
 
 export default app;
