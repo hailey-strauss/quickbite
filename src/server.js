@@ -6,7 +6,7 @@ dotenv.config();
 
 //let isConnected = false;
 
-export default async function handler(req, res) {
+export default async function connectDB() {
   try {
 
     // if (!isConnected) {
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   }
 }
 
-await handler();
+await connectDB();
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
