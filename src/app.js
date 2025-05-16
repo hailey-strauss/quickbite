@@ -13,12 +13,18 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  res.send("🎉 Express is working on Vercel!");
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    message: 'Server is running',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment:  'Production'
+  });
 });
 
-app.use("/api/users", userRouter);
-app.use("/api/restaurants", restaurantRoutes);
-app.use("/api/orders", orderRoutes);
+// app.use("/api/users", userRouter);
+// app.use("/api/restaurants", restaurantRoutes);
+// app.use("/api/orders", orderRoutes);
 
 export default app;
