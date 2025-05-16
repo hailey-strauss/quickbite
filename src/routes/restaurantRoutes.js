@@ -4,10 +4,10 @@ import {
   createRestaurant,
   deleteRestaurant,
 } from "../controllers/restaurantController.js";
-const router = express.Router();
+const restaurantRoutes = express.Router();
 
-router.get("/", getRestaurants);
-router.post("/", createRestaurant);
-router.delete("/:id", deleteRestaurant);
+restaurantRoutes.get("/", getRestaurants);
+restaurantRoutes.post("/", createRestaurant);
+restaurantRoutes.delete("/:id", deleteRestaurant);
 
-export default router;
+export default restaurantRoutes;

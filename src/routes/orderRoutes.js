@@ -4,10 +4,10 @@ import {
   createOrder,
   deleteOrder,
 } from "../controllers/orderController.js";
-const router = express.Router();
+const orderRoutes = express.Router();
 
-router.get("/", getOrders);
-router.post("/", createOrder);
-router.delete("/:id", deleteOrder);
+orderRoutes.get("/", getOrders);
+orderRoutes.post("/", createOrder);
+orderRoutes.delete("/:id", deleteOrder);
 
-export default router;
+export default orderRoutes;

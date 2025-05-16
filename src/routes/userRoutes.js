@@ -6,19 +6,19 @@ import {
   deleteUser,
 } from "../controllers/userController.js";
 
-const router = express.Router();
+const userRouter = express.Router();
 
 // Register a new user
-router.post("/", createUser); // This should handle the POST request to /users
+userRouter.post("/", createUser); // This should handle the POST request to /users
 
 // Login user and get JWT token
-router.post("/login", loginUser);
+userRouter.post("/login", loginUser);
 
 // Delete user by ID
-router.delete("/:id", deleteUser);
+userRouter.delete("/:id", deleteUser);
 
 // Get all users
-router.get("/", getUsers); // This should handle the GET request to /users
+userRouter.get("/", getUsers); // This should handle the GET request to /users
 
-export default router;
+export default userRouter;
 // changed some things
