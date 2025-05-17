@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
-app.get('/health', (req, res) => {
+app.get('', (req, res) => {
   res.status(200).json({
     status: 'OK',
     message: 'Server is running',
