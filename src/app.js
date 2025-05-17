@@ -23,8 +23,8 @@ app.get('/health', (req, res) => {
   });
 });
 
-// app.use("/api/users", userRouter);
-// app.use("/api/restaurants", restaurantRoutes);
-// app.use("/api/orders", orderRoutes);
+app.use("/api/users", userRouter);
+app.use("/api/restaurants", restaurantRoutes);
+app.use("/api/orders", orderRoutes);
 
 export default app;
