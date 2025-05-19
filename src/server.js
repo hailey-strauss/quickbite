@@ -4,28 +4,20 @@ import app from "./app.js";
 
 dotenv.config();
 
-//let isConnected = false;
+const PORT = process.env.PORT || 4000;
 
-// export async function connectDB() {
-//   try {
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("MongoDB connected");
 
-//     // if (!isConnected) {
-//     await mongoose.connect(process.env.MONGO_URI, {
-//     });
-//     console.log(" MongoDB connected");
-//     //isConnected = true;
-//     //}
-
-//     // return app(req, res); // Forward to Express app
-//   } catch (err) {
-//     console.error(" Server error:", err);
-//     //res.statusCode = 500;
-//     //res.end("Internal Server Error");
-//   }
-// }
-
-// await connectDB();
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
-});
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
